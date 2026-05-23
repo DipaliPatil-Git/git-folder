@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log your daily emotions and stress levels privately. Track how university life affects your mental state over time.">
+    <title>Mood Log - MindCare Wellness Platform</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/mood.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="scroll-active">
+
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+
+                
+
+                <span class="logo-text">
+                    MindCare
+                </span>
+
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="dashboard.html" class="nav-link">
+                    Dashboard
+                </a>
+
+                <a href="mood-tracker.html" class="nav-link active">
+                    Mood Tracker
+                </a>
+
+                <a href="chatbot.html" class="nav-link">
+                    AI Chatbot
+                </a>
+
+                <a href="resources.html" class="nav-link">
+                    Resources
+                </a>
+
+            </nav>
+
+            <!-- CTA -->
+            <div class="nav-cta">
+
+                <span
+                    style="
+                        font-size:0.9rem;
+                        font-weight:600;
+                        color:var(--text-secondary);
+                    "
+                >
+                    Hi,
+                    <span class="user-profile-name">
+                        Student
+                    </span>
+                </span>
+
+                <a
+                    href="#"
+                    class="btn btn-primary btn-sm logout-btn"
+                    style="padding:0.5rem 1.25rem;"
+                >
+                    Sign Out
+                </a>
+
+            </div>
+
+            <!-- Hamburger -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav-overlay"></div>
+
+    <nav class="mobile-nav">
+
+        <a href="index.html" class="nav-link">
+            Home
+        </a>
+
+        <a href="dashboard.html" class="nav-link">
+            Dashboard
+        </a>
+
+        <a href="mood-tracker.html" class="nav-link active">
+            Mood Tracker
+        </a>
+
+        <a href="chatbot.html" class="nav-link">
+            AI Chatbot
+        </a>
+
+        <a href="resources.html" class="nav-link">
+            Resources
+        </a>
+
+        <div class="nav-cta">
+
+            <span
+                style="
+                    margin-bottom:1rem;
+                    font-size:1rem;
+                    font-weight:600;
+                "
+            >
+                Hi,
+                <span class="user-profile-name">
+                    Student
+                </span>
+            </span>
+
+            <a href="#" class="btn btn-primary logout-btn">
+                Sign Out
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+
+            <!-- Profile -->
+            <div class="dashboard-sidebar-profile">
+
+                <div class="profile-avatar">
+                    S
+                </div>
+
+                <div class="profile-info">
+
+                    <h3 class="sidebar-profile-name">
+                        Student Name
+                    </h3>
+
+                    <p>
+                        Student Account
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="dashboard-sidebar-menu">
+
+                <a href="dashboard.html">
+
+                    <i data-lucide="layout-dashboard" class="sidebar-icon"></i>
+
+                    Dashboard
+
+                </a>
+
+                <a href="mood-tracker.html" class="active">
+
+                    <i data-lucide="clipboard-list" class="sidebar-icon"></i>
+
+                    Mood Log
+
+                </a>
+
+                <a href="chatbot.html">
+
+                    <i data-lucide="bot" class="sidebar-icon"></i>
+
+                    AI Chatbot
+
+                </a>
+
+                <a href="resources.html">
+
+                    <i data-lucide="book-open" class="sidebar-icon"></i>
+
+                    Resources
+
+                </a>
+
+                <a
+                    href="#"
+                    class="logout-btn"
+                    style="
+                        margin-top:2rem;
+                        border-top:1px solid var(--glass-border);
+                        padding-top:1.5rem;
+                    "
+                >
+
+                    <i data-lucide="log-out" class="sidebar-icon"></i>
+
+                    Sign Out
+
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- Main -->
+        <main class="dashboard-main">
+
+            <!-- Mood Form -->
+            <div class="mood-form-wrapper reveal reveal-up">
+
+                <h2
+                    style="
+                        font-size:2.2rem;
+                        margin-bottom:0.5rem;
+                    "
+                >
+                    Log Today's Mood
+                </h2>
+
+                <p
+                    style="
+                        color:var(--text-secondary);
+                        margin-bottom:2.5rem;
+                    "
+                >
+                    Take a quiet moment to check in with yourself. Your logs are saved locally and privately.
+                </p>
+
+                <!-- Form -->
+                <form id="mood-form">
+
+                    <!-- Section 1 -->
+                    <div class="mood-section-title">
+
+                        <span>
+                            1.
+                        </span>
+
+                        What is your primary feeling?
+
+                    </div>
+
+                    <!-- Mood Cards -->
+                    <div class="emoji-grid">
+
+                        <!-- Happy -->
+                        <div class="emoji-card" data-mood="Happy">
+
+                            <span class="emoji">
+
+                                <i data-lucide="smile"></i>
+
+                            </span>
+
+                            <span class="mood-label">
+                                Happy
+                            </span>
+
+                        </div>
+
+                        <!-- Calm -->
+                        <div class="emoji-card" data-mood="Calm">
+
+                            <span class="emoji">
+
+                                <i data-lucide="leaf"></i>
+
+                            </span>
+
+                            <span class="mood-label">
+                                Calm
+                            </span>
+
+                        </div>
+
+                        <!-- Sad -->
+                        <div class="emoji-card" data-mood="Sad">
+
+                            <span class="emoji">
+
+                                <i data-lucide="frown"></i>
+
+                            </span>
+
+                            <span class="mood-label">
+                                Sad
+                            </span>
+
+                        </div>
+
+                        <!-- Stressed -->
+                        <div class="emoji-card" data-mood="Stressed">
+
+                            <span class="emoji">
+
+                                <i data-lucide="brain-circuit"></i>
+
+                            </span>
+
+                            <span class="mood-label">
+                                Stressed
+                            </span>
+
+                        </div>
+
+                        <!-- Anxious -->
+                        <div class="emoji-card" data-mood="Anxious">
+
+                            <span class="emoji">
+
+                                <i data-lucide="shield-alert"></i>
+
+                            </span>
+
+                            <span class="mood-label">
+                                Anxious
+                            </span>
+
+                        </div>
+
+                        <!-- Burned Out -->
+                        <div class="emoji-card" data-mood="Burned Out">
+
+                            <span class="emoji">
+
+                                <i data-lucide="battery-warning"></i>
+
+                            </span>
+
+                            <span class="mood-label">
+                                Burned Out
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="slider-group">
+
+                        <div class="mood-section-title">
+
+                            <span>
+                                2.
+                            </span>
+
+                            Rate your current stress level
+
+                        </div>
+
+                        <div
+                            class="stress-level-display"
+                            id="stress-value"
+                        >
+                            40%
+                        </div>
+
+                        <div class="slider-wrapper">
+
+                            <input
+                                type="range"
+                                id="stress-slider"
+                                class="stress-slider"
+                                min="0"
+                                max="100"
+                                value="40"
+                            >
+
+                            <div class="slider-labels">
+
+                                <span>
+                                    Relaxed
+                                </span>
+
+                                <span>
+                                    Moderate
+                                </span>
+
+                                <span>
+                                    High Stress
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div
+                        class="mood-section-title"
+                        style="margin-top:1rem;"
+                    >
+
+                        <span>
+                            3.
+                        </span>
+
+                        Daily self-reflection (Optional)
+
+                    </div>
+
+                    <!-- Notes -->
+                    <textarea
+                        id="notes"
+                        class="notes-textarea"
+                        placeholder="Write down thoughts, events, or anything that influenced your mood today..."
+                    ></textarea>
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        style="
+                            width:auto;
+                            padding:1rem 3rem;
+                        "
+                    >
+                        Save Mood Entry
+                    </button>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/mood.js"></script>
+    <script src="js/animations.js"></script>
+
+    <!-- Initialize Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+/* ==========================================================================
+   ANIMATIONS & KEYFRAMES - MINDCARE
+   ========================================================================== */
+
+/* Infinite Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-fast {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Pulsing Glow Animation */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(99, 102, 241, 0.2), 0 0 5px rgba(99, 102, 241, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(99, 102, 241, 0.6), 0 0 15px rgba(167, 139, 250, 0.4);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2.5s infinite alternate;
+}
+
+/* Breathing Exercise Bubble Animations */
+@keyframes breathe-inhale {
+    0% {
+        transform: scale(1);
+        background: rgba(99, 102, 241, 0.2);
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+    }
+    100% {
+        transform: scale(2.2);
+        background: rgba(167, 139, 250, 0.45);
+        box-shadow: 0 0 50px rgba(167, 139, 250, 0.6);
+    }
+}
+
+@keyframes breathe-hold {
+    0% {
+        transform: scale(2.2);
+        background: rgba(167, 139, 250, 0.45);
+        box-shadow: 0 0 50px rgba(167, 139, 250, 0.6);
+    }
+    100% {
+        transform: scale(2.25);
+        background: rgba(52, 211, 153, 0.45);
+        box-shadow: 0 0 50px rgba(52, 211, 153, 0.6);
+    }
+}
+
+@keyframes breathe-exhale {
+    0% {
+        transform: scale(2.25);
+        background: rgba(52, 211, 153, 0.45);
+        box-shadow: 0 0 50px rgba(52, 211, 153, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        background: rgba(99, 102, 241, 0.2);
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+    }
+}
+
+/* Classes applied by JS during breathing cycle */
+.breathe-bubble-active.inhale {
+    animation: breathe-inhale 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.breathe-bubble-active.hold {
+    animation: breathe-hold 4s ease-in-out forwards;
+}
+
+.breathe-bubble-active.exhale {
+    animation: breathe-exhale 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Scroll Reveal Classes (controlled by IntersectionObserver in js/animations.js) */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.reveal-up {
+    transform: translateY(40px);
+}
+
+.reveal-down {
+    transform: translateY(-40px);
+}
+
+.reveal-left {
+    transform: translateX(-40px);
+}
+
+.reveal-right {
+    transform: translateX(40px);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Staggered Delay Helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Shimmer Loading Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer-bg {
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.06) 25%, 
+        rgba(255,255,255,0.15) 37%, 
+        rgba(255,255,255,0.06) 63%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+[data-theme="light"] .shimmer-bg {
+    background: linear-gradient(90deg, 
+        rgba(0,0,0,0.03) 25%, 
+        rgba(0,0,0,0.08) 37%, 
+        rgba(0,0,0,0.03) 63%
+    );
+    background-size: 200% 100%;
+}
+
+/* Typing Dots Animation */
+@keyframes typing-bounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(-6px);
+        opacity: 1;
+    }
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-secondary);
+    border-radius: 50%;
+    display: inline-block;
+    animation: typing-bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+/* Entrance Animations */
+@keyframes scale-in {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-scale-in {
+    animation: scale-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Background blob drift animation */
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.blob-1 {
+    animation: drift 20s infinite alternate ease-in-out;
+}
+.blob-2 {
+    animation: drift 25s infinite alternate-reverse ease-in-out;
+}
+.blob-3 {
+    animation: drift 18s infinite alternate ease-in-out;
+}

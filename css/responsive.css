@@ -1,0 +1,187 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN & MEDIA QUERIES - MINDCARE
+   ========================================================================== */
+
+/* Large Tablets & Desktop (992px to 1200px) */
+@media (max-width: 1200px) {
+    :root {
+        --max-width: 960px;
+    }
+    
+    .footer-grid {
+        gap: 2rem;
+    }
+}
+
+/* Medium Tablets & iPads (768px to 992px) */
+@media (max-width: 992px) {
+    :root {
+        --max-width: 720px;
+        --border-radius-lg: 24px;
+        --border-radius-md: 16px;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Grids */
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Navbar */
+    .nav-menu, .nav-cta {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+    
+    .footer-brand {
+        grid-column: span 2;
+    }
+}
+
+/* Portrait Tablets & Small Screens (576px to 768px) */
+@media (max-width: 768px) {
+    :root {
+        --max-width: 540px;
+    }
+
+    /* Grids */
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Specific Page Layouts */
+    .hero-content {
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Dashboard Layout */
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+        width: 100% !important;
+        height: auto !important;
+        position: static !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--glass-border);
+        padding: 1rem !important;
+    }
+
+    .dashboard-sidebar-menu {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .dashboard-sidebar-menu a {
+        padding: 0.5rem 1rem !important;
+        border-radius: var(--border-radius-sm);
+    }
+    
+    .dashboard-main {
+        padding: 1.5rem !important;
+    }
+
+    /* Chatbot Layout */
+    .chatbot-container {
+        flex-direction: column;
+        height: calc(100vh - 120px) !important;
+    }
+
+    .chatbot-sidebar {
+        width: 100% !important;
+        height: auto !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--glass-border);
+        padding: 1rem !important;
+        max-height: 120px;
+        overflow-y: auto;
+    }
+
+    .chatbot-chat-area {
+        height: 100% !important;
+    }
+
+    /* Resources Layout */
+    .resources-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .category-filter {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+    :root {
+        --max-width: 100%;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-container {
+        padding: 1rem 1.25rem;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-brand {
+        grid-column: span 1;
+    }
+
+    /* Auth Page Forms */
+    .auth-card {
+        padding: 1.5rem !important;
+    }
+}

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access specialized mental health resources for students, including guided breathing, self-care articles, and emergency helplines.">
+    <title>Wellness Resources - MindCare Platform</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/resources.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Background Blobs -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="scroll-active">
+
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+               
+                <span class="logo-text">MindCare</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="mood-tracker.html" class="nav-link">Mood Tracker</a>
+                <a href="chatbot.html" class="nav-link">AI Chatbot</a>
+                <a href="resources.html" class="nav-link active">Resources</a>
+            </nav>
+
+            <!-- CTA -->
+            <div class="nav-cta">
+
+                <span style="font-size:0.9rem;font-weight:600;color:var(--text-secondary);">
+                    Hi, <span class="user-profile-name">Student</span>
+                </span>
+
+                <a
+                    href="#"
+                    class="btn btn-primary btn-sm logout-btn"
+                    style="padding:0.5rem 1.25rem;"
+                >
+                    Sign Out
+                </a>
+
+            </div>
+
+            <!-- Hamburger -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay"></div>
+
+    <nav class="mobile-nav">
+
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="mood-tracker.html" class="nav-link">Mood Tracker</a>
+        <a href="chatbot.html" class="nav-link">AI Chatbot</a>
+        <a href="resources.html" class="nav-link active">Resources</a>
+
+        <div class="nav-cta">
+
+            <span style="margin-bottom:1rem;font-size:1rem;font-weight:600;">
+                Hi, <span class="user-profile-name">Student</span>
+            </span>
+
+            <a href="#" class="btn btn-primary logout-btn">
+                Sign Out
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+
+            <div class="dashboard-sidebar-profile">
+
+                <div class="profile-avatar">
+                    <i data-lucide="user"></i>
+                </div>
+
+                <div class="profile-info">
+                    <h3 class="sidebar-profile-name">Student Name</h3>
+                    <p>Student Account</p>
+                </div>
+
+            </div>
+
+            <nav class="dashboard-sidebar-menu">
+
+                <a href="dashboard.html">
+                    <span class="sidebar-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </span>
+                    Dashboard
+                </a>
+
+                <a href="mood-tracker.html">
+                    <span class="sidebar-icon">
+                        <i data-lucide="clipboard-list"></i>
+                    </span>
+                    Mood Log
+                </a>
+
+                <a href="chatbot.html">
+                    <span class="sidebar-icon">
+                        <i data-lucide="bot"></i>
+                    </span>
+                    AI Chatbot
+                </a>
+
+                <a href="resources.html" class="active">
+                    <span class="sidebar-icon">
+                        <i data-lucide="book-open"></i>
+                    </span>
+                    Resources
+                </a>
+
+                <a
+                    href="#"
+                    class="logout-btn"
+                    style="margin-top:2rem;border-top:1px solid var(--glass-border);padding-top:1.5rem;"
+                >
+                    <span class="sidebar-icon">
+                        <i data-lucide="log-out"></i>
+                    </span>
+                    Sign Out
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- Main -->
+        <main class="dashboard-main">
+
+            <!-- Header -->
+            <div class="resources-header reveal reveal-up">
+
+                <div class="resources-title-area">
+                    <h2 style="font-size:2.2rem;">
+                        Wellness Resources
+                    </h2>
+
+                    <p>
+                        Discover breathing tools, self-care guides, and support resources.
+                    </p>
+                </div>
+
+                <!-- Search -->
+                <div class="search-bar-container">
+
+                    <span class="search-icon">
+                        <i data-lucide="search"></i>
+                    </span>
+
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="search-input"
+                        placeholder="Search guides, tips, techniques..."
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- Filters -->
+            <div class="category-filter reveal reveal-up delay-100">
+
+                <button class="filter-pill active" data-category="all">
+                    All Content
+                </button>
+
+                <button class="filter-pill" data-category="meditation">
+                    Meditation
+                </button>
+
+                <button class="filter-pill" data-category="sleep">
+                    Sleep Habits
+                </button>
+
+                <button class="filter-pill" data-category="stress">
+                    Stress Limits
+                </button>
+
+                <button class="filter-pill" data-category="productivity">
+                    Productivity
+                </button>
+
+            </div>
+
+            <!-- Layout -->
+            <div class="resources-layout">
+
+                <!-- Left Section -->
+                <div style="display:flex;flex-direction:column;gap:2.5rem;">
+
+                    <!-- Breathing -->
+                    <div
+                        id="breathing"
+                        class="glass-card breathing-card reveal reveal-left"
+                    >
+
+                        <h3
+                            style="font-size:1.5rem;margin-bottom:0.5rem;font-family:'Outfit';"
+                        >
+                            Guided Deep Breathing
+                        </h3>
+
+                        <p
+                            style="color:var(--text-secondary);max-width:500px;margin:0 auto 2rem auto;font-size:0.95rem;"
+                        >
+                            Take a moment to center yourself and practice calming breathing exercises.
+                        </p>
+
+                        <div class="breathing-visualizer-container">
+
+                            <div class="breathing-bubble" id="breathing-bubble">
+                                <i data-lucide="wind"></i>
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="breathing-instruction"
+                            id="breathing-instruction"
+                        >
+                            Ready when you are
+                        </div>
+
+                        <div
+                            class="breathing-timer"
+                            id="breathing-timer"
+                        >
+                            Focus on your breath
+                        </div>
+
+                        <div class="breathing-controls">
+
+                            <button
+                                id="start-breathing-btn"
+                                class="btn btn-primary"
+                            >
+                                Start Session
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Articles -->
+                    <div>
+
+                        <h3
+                            style="margin-bottom:1.5rem;"
+                            class="reveal reveal-up"
+                        >
+                            Recommended Reads
+                        </h3>
+
+                        <div class="articles-grid">
+
+                            <!-- Article 1 -->
+                            <div
+                                class="glass-card article-card reveal reveal-up delay-100"
+                                data-category="meditation"
+                                onclick="alert('Full guide reading is simulated.')"
+                                style="cursor:pointer;"
+                            >
+
+                                <div
+                                    class="article-image"
+                                    style="background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=600');"
+                                >
+                                    <span class="article-tag">
+                                        Meditation
+                                    </span>
+                                </div>
+
+                                <h3>
+                                    Beginner's Guide to Daily Mindfulness
+                                </h3>
+
+                                <p>
+                                    Learn meditation basics, mental clarity techniques, and calming focus routines.
+                                </p>
+
+                                <div class="article-card-footer">
+
+                                    <span>May 20, 2026</span>
+
+                                    <span class="read-time">
+                                        <i data-lucide="clock-3"></i>
+                                        5 min read
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Article 2 -->
+                            <div
+                                class="glass-card article-card reveal reveal-up delay-200"
+                                data-category="sleep"
+                                onclick="alert('Full guide reading is simulated.')"
+                                style="cursor:pointer;"
+                            >
+
+                                <div
+                                    class="article-image"
+                                    style="background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1511295742364-92767fa62d9f?auto=format&fit=crop&q=80&w=600');"
+                                >
+                                    <span class="article-tag">
+                                        Sleep Habits
+                                    </span>
+                                </div>
+
+                                <h3>
+                                    Improving Your Sleep Hygiene
+                                </h3>
+
+                                <p>
+                                    Improve sleep quality using simple night routines and healthy digital habits.
+                                </p>
+
+                                <div class="article-card-footer">
+
+                                    <span>May 18, 2026</span>
+
+                                    <span class="read-time">
+                                        <i data-lucide="clock-3"></i>
+                                        6 min read
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Article 3 -->
+                            <div
+                                class="glass-card article-card reveal reveal-up delay-300"
+                                data-category="stress"
+                                onclick="alert('Full guide reading is simulated.')"
+                                style="cursor:pointer;"
+                            >
+
+                                <div
+                                    class="article-image"
+                                    style="background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=600');"
+                                >
+                                    <span class="article-tag">
+                                        Stress Limits
+                                    </span>
+                                </div>
+
+                                <h3>
+                                    Setting Healthy Academic Boundaries
+                                </h3>
+
+                                <p>
+                                    Prevent burnout by balancing workload, breaks, and personal wellbeing.
+                                </p>
+
+                                <div class="article-card-footer">
+
+                                    <span>May 15, 2026</span>
+
+                                    <span class="read-time">
+                                        <i data-lucide="clock-3"></i>
+                                        4 min read
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Article 4 -->
+                            <div
+                                class="glass-card article-card reveal reveal-up delay-400"
+                                data-category="productivity"
+                                onclick="alert('Full guide reading is simulated.')"
+                                style="cursor:pointer;"
+                            >
+
+                                <div
+                                    class="article-image"
+                                    style="background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&q=80&w=600');"
+                                >
+                                    <span class="article-tag">
+                                        Productivity
+                                    </span>
+                                </div>
+
+                                <h3>
+                                    The Power of Single-Task Focus Blocks
+                                </h3>
+
+                                <p>
+                                    Discover deep work techniques that improve concentration and reduce fatigue.
+                                </p>
+
+                                <div class="article-card-footer">
+
+                                    <span>May 12, 2026</span>
+
+                                    <span class="read-time">
+                                        <i data-lucide="clock-3"></i>
+                                        7 min read
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right Section -->
+                <div
+                    class="helpline-sidebar reveal reveal-right"
+                    id="helplines"
+                >
+
+                    <!-- Helpline -->
+                    <div class="glass-card helpline-card">
+
+                        <h3>
+                            Urgent Support Contacts
+                        </h3>
+
+                        <p>
+                            Reach out immediately if you or someone you know needs mental health support.
+                        </p>
+
+                        <div class="helpline-list">
+
+                            <!-- Item -->
+                            <div class="helpline-item">
+
+                                <span class="helpline-name">
+                                    National Crisis Lifeline
+                                </span>
+
+                                <a href="tel:988" class="helpline-number">
+                                    988
+                                </a>
+
+                                <span class="helpline-avail">
+                                    Available 24/7 • Call or Text
+                                </span>
+
+                            </div>
+
+                            <!-- Item -->
+                            <div class="helpline-item">
+
+                                <span class="helpline-name">
+                                    Crisis Text Line
+                                </span>
+
+                                <span
+                                    class="helpline-number"
+                                    style="font-size:1rem;color:var(--danger);"
+                                >
+                                    Text "HOME" to 741741
+                                </span>
+
+                                <span class="helpline-avail">
+                                    Available 24/7 • Free Text Support
+                                </span>
+
+                            </div>
+
+                            <!-- Item -->
+                            <div class="helpline-item">
+
+                                <span class="helpline-name">
+                                    University Wellness Center
+                                </span>
+
+                                <a
+                                    href="tel:5550192834"
+                                    class="helpline-number"
+                                >
+                                    (555) 019-2834
+                                </a>
+
+                                <span class="helpline-avail">
+                                    Mon - Fri • 9:00 AM - 5:00 PM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Tip -->
+                    <div
+                        class="glass-card"
+                        style="background:rgba(167,139,250,0.05);"
+                    >
+
+                        <h4
+                            style="margin-bottom:0.5rem;font-family:'Outfit';"
+                        >
+                            Daily Wellness Action
+                        </h4>
+
+                        <p
+                            style="font-size:0.85rem;color:var(--text-secondary);line-height:1.4;"
+                        >
+                            Staying hydrated, stretching regularly, and taking short breaks can help reduce stress and mental fatigue.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/resources.js"></script>
+    <script src="js/animations.js"></script>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

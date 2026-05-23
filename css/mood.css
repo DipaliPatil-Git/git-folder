@@ -1,0 +1,245 @@
+/* ==========================================================================
+   MOOD TRACKER PAGE STYLING - MINDCARE
+   ========================================================================== */
+
+.mood-container {
+    max-width: 800px;
+    margin: 8rem auto 4rem auto;
+    padding: 0 2rem;
+}
+
+.mood-form-wrapper {
+    margin-bottom: 3rem;
+}
+
+.mood-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Emoji Selector Grid */
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (max-width: 640px) {
+    .emoji-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.emoji-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.emoji-card .emoji {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    transition: transform var(--transition-normal);
+}
+
+.emoji-card .mood-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.emoji-card:hover {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: var(--primary-light);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.1);
+}
+
+.emoji-card:hover .emoji {
+    transform: scale(1.2);
+}
+
+.emoji-card.selected {
+    background: var(--primary-gradient);
+    border-color: transparent;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3), var(--glow-shadow);
+}
+
+.emoji-card.selected .emoji {
+    transform: scale(1.25);
+}
+
+.emoji-card.selected .mood-label {
+    color: white;
+}
+
+/* Stress Level Slider */
+.slider-group {
+    margin-bottom: 2.5rem;
+}
+
+.slider-wrapper {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.stress-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(to right, var(--success), var(--warning), var(--danger));
+    outline: none;
+    cursor: pointer;
+}
+
+/* Slider Thumb styling for Webkit */
+.stress-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--primary);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.stress-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    border-color: var(--secondary);
+}
+
+/* Slider value bubble display */
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.stress-level-display {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Daily notes textarea */
+.notes-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--glass-border);
+    resize: vertical;
+    transition: all var(--transition-normal);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.notes-textarea:focus {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+/* Mood History Panel */
+.mood-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+}
+
+.history-mood-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.history-emoji {
+    font-size: 2.2rem;
+}
+
+.history-details h4 {
+    font-size: 1.05rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.history-details p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.history-meta {
+    text-align: right;
+}
+
+.history-stress-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stress-badge-low {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--success);
+}
+
+.stress-badge-medium {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--warning);
+}
+
+.stress-badge-high {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--danger);
+}
+
+.history-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.history-notes {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    grid-column: span 2;
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+    border-top: 1px dashed var(--glass-border);
+    width: 100%;
+}

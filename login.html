@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - MindCare Wellness Platform</title>
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+
+const supabaseClient = window.supabase.createClient(
+    "https://wzrntrbrplremvylfvxw.supabase.co",
+    "sb_publishable_wtz9xVv5wQYEQjQuI6X1Zg_fRObwfLi"
+);
+
+</script>
+<body>
+
+    <!-- Calming Background Blobs -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://img.icons8.com/fluency/48/lotus-flower.png" alt="MindCare Logo" class="logo-img">
+                <span class="logo-text">MindCare</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="hackfest\index.html" class="nav-link">Home</a>
+                <a href="hackfest\dashboard.html" class="nav-link">Dashboard</a>
+                <a href="mood-tracker.html" class="nav-link">Mood Tracker</a>
+                <a href="chatbot.html" class="nav-link">AI Chatbot</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="login.html" class="nav-link active">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm" style="padding: 0.5rem 1.25rem;">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-overlay"></div>
+    <nav class="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="hackfest\dashboard.html" class="nav-link">Dashboard</a>
+        <a href="mood-tracker.html" class="nav-link">Mood Tracker</a>
+        <a href="chatbot.html" class="nav-link">AI Chatbot</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <div class="nav-cta">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary" style="margin-top: 0.5rem;">Register Now</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="auth-wrapper">
+        <div class="glass-card auth-card animate-scale-in">
+            <div class="auth-header">
+                <h2>Welcome Back</h2>
+                <p>Enter your student credentials to access your wellness dashboard</p>
+                <div style="margin-top: 0.75rem; padding: 0.5rem; background: rgba(99, 102, 241, 0.1); border-radius: var(--border-radius-sm); font-size: 0.8rem; color: var(--primary); font-weight: 600;">
+                    Demo Account: <strong>student@mindcare.edu</strong> / <strong>password123</strong>
+                </div>
+            </div>
+
+            <form id="login-form" class="auth-form" novalidate>
+                <!-- Email Group -->
+                <div class="form-group" id="email-group">
+                    <label for="login-email">University Email</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon"><i data-lucide="mail"></i></span>
+                        <input type="email" id="login-email" placeholder="you@university.edu" required>
+                    </div>
+                    <span class="form-error-msg">Email is invalid</span>
+                </div>
+
+                <!-- Password Group -->
+                <div class="form-group" id="pass-group">
+                    <label for="login-password">Password</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon"><i data-lucide="lock"></i></span>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                        <button type="button" class="password-toggle" tabindex="-1"><i data-lucide="eye"></i></button>
+                    </div>
+                    <span class="form-error-msg">Password is incorrect</span>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me-chk">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link" onclick="alert('Password reset link simulated. Real implementations use SMTP delivery.')">Forgot Password?</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">Sign In</button>
+
+                <!-- Social Login Divider -->
+                <div class="social-divider">or sign in with</div>
+
+                <!-- Social Sign In buttons -->
+                <div class="social-buttons">
+                    <button type="button" class="social-btn" onclick="alert('OAuth login flow simulated.')">
+                        <i data-lucide="graduation-cap" style="width:16px;height:16px;"></i> Student Portal
+                    </button>
+                    <button type="button" class="social-btn" onclick="alert('Google OAuth login flow simulated.')">
+                        <i data-lucide="globe" style="width:16px;height:16px;"></i> Google
+                    </button>
+                </div>
+            </form>
+
+            <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--text-secondary);">
+                Don't have an account? <a href="signup.html" style="font-weight: 700;">Register here</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- JS Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

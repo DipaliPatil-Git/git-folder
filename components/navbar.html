@@ -1,0 +1,78 @@
+<!-- ==========================================================================
+     SHARED NAVBAR COMPONENT TEMPLATE - MINDCARE
+     ========================================================================== -->
+
+<header>
+    <div class="nav-container">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <img src="https://img.icons8.com/fluency/48/lotus-flower.png" alt="MindCare Logo" class="logo-img">
+            <span class="logo-text">MindCare</span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="mood-tracker.html" class="nav-link">Mood Tracker</a>
+            <a href="chatbot.html" class="nav-link">AI Chatbot</a>
+            <a href="resources.html" class="nav-link">Resources</a>
+        </nav>
+
+        <!-- CTA Buttons -->
+        <div class="nav-cta">
+            <!-- These elements swap depending on login status (handled in main.js/auth.js) -->
+            <script>
+                const user = JSON.parse(localStorage.getItem('mindcare_user'));
+                if (user) {
+                    document.write(`
+                        <span style="font-size: 0.9rem; font-weight:600; color: var(--text-secondary);">Hi, <span class="user-profile-name">${user.name}</span></span>
+                        <a href="dashboard.html" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1.25rem;">Dashboard</a>
+                        <a href="#" class="btn btn-primary btn-sm logout-btn" style="padding: 0.5rem 1.25rem;">Sign Out</a>
+                    `);
+                } else {
+                    document.write(`
+                        <a href="login.html" class="nav-link">Login</a>
+                        <a href="signup.html" class="btn btn-primary btn-sm" style="padding: 0.5rem 1.25rem;">Get Started</a>
+                    `);
+                }
+            </script>
+        </div>
+
+        <!-- Hamburger Icon for Mobile Drawer -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Drawer Overlay -->
+<div class="mobile-nav-overlay"></div>
+
+<!-- Mobile Navigation Drawer -->
+<nav class="mobile-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="mood-tracker.html" class="nav-link">Mood Tracker</a>
+    <a href="chatbot.html" class="nav-link">AI Chatbot</a>
+    <a href="resources.html" class="nav-link">Resources</a>
+    
+    <div class="nav-cta">
+        <script>
+            if (user) {
+                document.write(`
+                    <span style="margin-bottom: 1rem; font-size: 1rem; font-weight:600;">Hi, <span class="user-profile-name">${user.name}</span></span>
+                    <a href="dashboard.html" class="btn btn-secondary">Dashboard</a>
+                    <a href="#" class="btn btn-primary logout-btn" style="margin-top: 0.5rem;">Sign Out</a>
+                `);
+            } else {
+                document.write(`
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="margin-top: 0.5rem;">Register Now</a>
+                `);
+            }
+        </script>
+    </div>
+</nav>
